@@ -11,7 +11,10 @@
       "Bash(npx shadcn-ui@latest add:*)",
       "Bash(npx shadcn@latest add:*)",
       "Bash(mkdir:*)",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

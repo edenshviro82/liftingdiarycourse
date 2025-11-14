@@ -54,9 +54,10 @@ This is a lifting diary course application built with **Next.js 16** using the A
 3. **Follow patterns and standards** outlined in the documentation
 4. **Only generate code after understanding** the documented approach and conventions for that feature area
 
-- /docs/ui.md 
+This ensures consistency, maintainability, and adherence to project-specific patterns and best practices:
 
-This ensures consistency, maintainability, and adherence to project-specific patterns and best practices.
+- /docs/ui.md 
+- /docs/data-fetching.md
 
 ## Key Notes
 - This is an early-stage project (v0.1.0) with basic Next.js boilerplate setup
