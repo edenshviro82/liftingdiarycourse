@@ -46,6 +46,18 @@ This is a lifting diary course application built with **Next.js 16** using the A
 - **Tailwind CSS 4** - Utility-first CSS
 - **ESLint 9** - Code linting
 
+## Code Generation Guidelines
+
+**IMPORTANT:** Before generating any code, Claude Code MUST:
+1. **Check the `/docs` directory** for relevant documentation files
+2. **Read and refer to the appropriate docs** that relate to the feature or component being implemented
+3. **Follow patterns and standards** outlined in the documentation
+4. **Only generate code after understanding** the documented approach and conventions for that feature area
+
+- /docs/ui.md 
+
+This ensures consistency, maintainability, and adherence to project-specific patterns and best practices.
+
 ## Key Notes
 - This is an early-stage project (v0.1.0) with basic Next.js boilerplate setup
 - Focus on extending the app in the `app/` directory following Next.js App Router conventions
