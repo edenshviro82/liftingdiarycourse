@@ -56,10 +56,12 @@ This is a lifting diary course application built with **Next.js 16** using the A
 
 This ensures consistency, maintainability, and adherence to project-specific patterns and best practices:
 
-- /docs/ui.md 
+- /docs/ui.md
 - /docs/data-fetching.md
 - /docs/auth.md
 - /docs/data-mutations.md
+- /docs/server-component.md
+- /docs/routing.md
 ## Key Notes
 - This is an early-stage project (v0.1.0) with basic Next.js boilerplate setup
 - Focus on extending the app in the `app/` directory following Next.js App Router conventions

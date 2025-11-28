@@ -100,3 +100,49 @@ export async function createWorkout(input: CreateWorkoutInput) {
 
   return result[0];
 }
+
+/**
+ * Update an existing workout for the currently logged in user
+ */
+export interface UpdateWorkoutInput {
+  id: string;
+  name?: string;
+  startedAt?: Date;
+}
+
+export async function updateWorkout(input: UpdateWorkoutInput) {
+  const user = await getCurrentUser();
+
+  if (!user) {
+    throw new Error('Unauthorized');
+  }
+
+  // CRITICAL: Verify user owns this workout
+  const existingWorkout = await db
+    .select()
+    .from(workoutsTable)
+    .where(
+      and(
+        eq(workoutsTable.id, input.id),
+        eq(workoutsTable.userId, user.id)
+      )
+    )
+    .limit(1);
+
+  if (!existingWorkout[0]) {
+    throw new Error('Workout not found or unauthorized');
+  }
+
+  const updateData: Partial<typeof workoutsTable.$inferInsert> = {};
+
+  if (input.name !== undefined) updateData.name = input.name;
+  if (input.startedAt !== undefined) updateData.startedAt = input.startedAt;
+
+  const result = await db
+    .update(workoutsTable)
+    .set(updateData)
+    .where(eq(workoutsTable.id, input.id))
+    .returning();
+
+  return result[0];
+}
