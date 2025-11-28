@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import { getUserWorkoutsByDate } from "@/src/data/workouts";
 import { DashboardClient } from "@/src/components/dashboard-client";
 

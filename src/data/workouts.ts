@@ -73,3 +73,30 @@ export async function getWorkoutById(workoutId: string) {
 
   return workout[0] || null;
 }
+
+/**
+ * Create a new workout for the currently logged in user
+ */
+export interface CreateWorkoutInput {
+  name: string;
+  startedAt: Date;
+}
+
+export async function createWorkout(input: CreateWorkoutInput) {
+  const user = await getCurrentUser();
+
+  if (!user) {
+    throw new Error('Unauthorized');
+  }
+
+  const result = await db
+    .insert(workoutsTable)
+    .values({
+      name: input.name,
+      startedAt: input.startedAt,
+      userId: user.id,
+    })
+    .returning();
+
+  return result[0];
+}

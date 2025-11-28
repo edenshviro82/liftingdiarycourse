@@ -58,7 +58,8 @@ This ensures consistency, maintainability, and adherence to project-specific pat
 
 - /docs/ui.md 
 - /docs/data-fetching.md
-
+- /docs/auth.md
+- /docs/data-mutations.md
 ## Key Notes
 - This is an early-stage project (v0.1.0) with basic Next.js boilerplate setup
 - Focus on extending the app in the `app/` directory following Next.js App Router conventions
